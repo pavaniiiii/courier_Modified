@@ -1,0 +1,34 @@
+{
+  "couriers": [
+    {
+      "shipment": true,
+      "Date": "1-3-2023",
+      "Email": "pavan@gmail.com",
+      "Full_Name": "Pavan Kumar",
+      "Phone_No": "9177086825",
+      "Shipment_From": "Rajahmundry",
+      "Shipment_To": "Bangaloore",
+      "Time": "16:41",
+      "Tracking_Id": "ETH1677669086252",
+      "Weight": "2.3",
+      "Received_Date": "1-3-2023",
+      "Received_Time": "16:49",
+      "id": 1
+    },
+    {
+      "shipment": true,
+      "Date": "1-3-2023",
+      "Email": "kaveri@gmail.com",
+      "Full_Name": "Kaveri Rathod",
+      "Phone_No": "7760389607",
+      "Shipment_From": "Rajahmundry",
+      "Shipment_To": "Hyderabad",
+      "Time": "16:51",
+      "Tracking_Id": "ETH1677669719836",
+      "Weight": "1.45",
+      "Received_Date": "1-3-2023",
+      "Received_Time": "16:53",
+      "id": 2
+    }
+  ]
+}

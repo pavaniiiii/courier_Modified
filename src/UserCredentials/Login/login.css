@@ -1,0 +1,83 @@
+.login {
+   height: 100vh;
+   background-color: rgb(195, 186, 220);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.card-login {
+   display: flex;
+   height: 500px;
+   flex-direction: row;
+   background-color: white;
+   width: 70%;
+   border-radius: 10px;
+}
+.left-side {
+  flex: 1;
+   background: linear-gradient(rgba(145, 214, 163, 0.7), rgba(230, 34, 34, 0.4));
+   background-size: cover;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   color: rgb(40, 36, 36);
+}
+.login-left-heading{
+   margin-left: 30px;
+   margin-top: 30px;
+   color: black;
+}
+.right-heading {
+   font-size: 28px;
+  align-items: center;
+}
+.login-left-content {
+   font-size: 17px;
+   overflow: hidden;
+}
+.login-left-span {
+   font-size: 20px;
+   line-height: 10px;
+}
+
+.register-button {
+
+   padding: 1px 30px;
+   line-height: 40px;
+   background-color: rgb(8, 32, 9);
+   color: white;
+   font-size: large;
+   border-radius: 10px;
+}
+
+.right-side {
+  flex:1;
+   padding-left: 50px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.input-field {
+   border: none;
+   width: 350px;
+   border-bottom: 2px solid gray;
+   padding: 20px;
+}
+
+.submit-button {
+   width: 50%;
+   padding: 8px;
+   line-height: 30px;
+   background-color: rgb(30, 28, 32);
+   color: white;
+   font-size: large;
+   border-radius: 10px;
+} 

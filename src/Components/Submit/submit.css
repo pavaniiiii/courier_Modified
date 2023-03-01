@@ -1,0 +1,63 @@
+
+.details{
+    display: flex;
+   justify-content: center;
+   width: 80%;
+
+  
+}
+.left{
+    margin-right: 100px;
+}
+.center{
+  margin-right: 100px;
+}
+
+h4{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif ;
+    margin-right: 10px;
+}
+span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  
+}
+.user-data{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+.person-logo{
+    width: 170px;
+    height: 150px;
+    border-radius: 5%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.update{
+    margin-top: -180px;
+}
+.move-to-action{
+    margin-right: 500px;
+    width: 100px;
+    height: 50px;
+    padding: 0 25px ;
+    background-color: rgb(211, 92, 65);
+    border: none;
+      top: 20px;
+    border-radius: 3px;
+}
+.status-change{
+    margin-left: 50px;
+    width: 100px;
+    height: 50px;
+    padding: 0 25px ;
+    background-color: rgb(245, 202, 11);
+    border: none;
+      top: 20px;
+    border-radius: 3px;
+
+}

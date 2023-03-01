@@ -1,0 +1,56 @@
+.tracking{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(45deg,rgb(165, 136, 136),rgb(232, 232, 237));
+  
+    justify-content: center;
+}
+.tracking-img{
+  width: 100%;
+  
+}
+.table-track{
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 1000px;
+}
+.table-track thead tr{
+  text-align: center;
+}
+.table-header{
+  width: 80%;
+  
+}
+.tracking-main{
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+}
+.tracking-input{
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+
+}
+.tracking-input-text{
+    padding-left: 15px; 
+    outline: none;
+}
+.tracking-submit{
+  margin-left: 50px;
+  width: 100px;
+  height: 50px;
+  padding: 0 25px ;
+  background-color: rgb(245, 202, 11);
+  border: none;
+    top: 20px;
+  border-radius: 3px;
+}
+
+
+.details{
+ margin-right: 300px;
+ margin-top: 10px;
+}

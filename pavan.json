@@ -1,0 +1,28 @@
+{
+  "registration": [
+    {
+      "username": "Pavan_kumar",
+      "email": "pavankumaryaragogu116@gmail.com",
+      "phone": "9177086825",
+      "password": "Pawan@12345",
+      "cpassword": "Pawan@12345",
+      "id": 1
+    },
+    {
+      "username": "roopi",
+      "email": "roopi@gmail.com",
+      "phone": "1234567890",
+      "password": "Roopi@12345",
+      "cpassword": "Roopi@12345",
+      "id": 2
+    },
+    {
+      "username": "pavankumar123",
+      "email": "roopi1234@gmail.com",
+      "phone": "9134567890",
+      "password": "Ravi@12345",
+      "cpassword": "Ravi@12345",
+      "id": 3
+    }
+  ]
+}
