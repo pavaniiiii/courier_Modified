@@ -7,10 +7,13 @@ function Action() {
   const [data, setData] = useState(null)
 
   useEffect(()=>{
-       fetch("http://localhost:5000/couriers")
+       fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json")
        .then(res=>{
         return res.json()})
-       .then(res=>setData(res))
+       .then(res=>{
+        setData(res)
+        console.log(res)
+  })
 
        .catch(err=>console.log(err))
   },[])
@@ -41,20 +44,22 @@ function Action() {
           </tr>
         </thead>
         <tbody>
-              { data &&  data.map((item)=>
-                <tr className='border' key={item.id} >                  
-                    <td>{item.Tracking_Id} </td>
-                    <td>{item.Full_Name} </td>
-                    <td>{item.Email} </td>
-                    <td>{item.Phone_No} </td>
-                    <td>{item.Shipment_From} </td>
-                    <td>{item.Shipment_To} </td>
-                    <td>{item.Date} </td>
-                    <td>{item.Time} </td>
-                   <td>{item.Received_Date}</td> 
-                   <td>{item.Received_Time}</td> 
-                     <td>{(item.shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span> } </td>
-                     <td className='edit' > <Link to={`/action/${item.id}`} > <VisibilityIcon color="primary" fontSize='large' /></Link> </td>
+              {/* { data &&  data.map((data[id])=> */}
+                  { data && 
+                   Object.keys(data).map((id)=>
+                <tr className='border' key={id} >                  
+                    <td>{data[id].Tracking_Id} </td>
+                    <td>{data[id].Full_Name} </td>
+                    <td>{data[id].Email} </td>
+                    <td>{data[id].Phone_No} </td>
+                    <td>{data[id].Shipment_From} </td>
+                    <td>{data[id].Shipment_To} </td>
+                    <td>{data[id].Date} </td>
+                    <td>{data[id].Time} </td>
+                    <td>{(data[id].Received_Date) ?(data[id].Received_Date):"-" }</td>
+                <td>{(data[id].Received_Time)?(data[id].Received_Time):"-" }</td>
+                     <td>{(data[id].shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span> } </td>
+                     <td className='edit' > <Link to={`/action/${id}`} > <VisibilityIcon color="primary" fontSize='large' /></Link> </td>
                   </tr>)}
         </tbody>
       </table>

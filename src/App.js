@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Tracking from './Components/Tracking/Tracking';
 import Action from './Components/Action/Action';
 import Submit from './Components/Submit/Submit';
+import firebaseDB from './firebase'
 import Login from './UserCredentials/Login/Login';
 import Register from './UserCredentials/Register/Register';
 import Logout from './UserCredentials/Logout/Logout';

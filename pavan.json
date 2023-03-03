@@ -23,6 +23,14 @@
       "password": "Ravi@12345",
       "cpassword": "Ravi@12345",
       "id": 3
+    },
+    {
+      "username": "Rani",
+      "email": "rani@gmail.com",
+      "phone": "9087654321",
+      "password": "Rani@12345",
+      "cpassword": "Rani@12345",
+      "id": 4
     }
   ]
 }

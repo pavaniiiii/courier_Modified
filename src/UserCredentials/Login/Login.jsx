@@ -11,29 +11,32 @@ const Login = () => {
   const Navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:7000/registration/")
+    fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json")
       .then(res => res.json())
       .then(res => {
         setLogin(res)
+        console.log(res)
       })
       .catch(err => console.log(err.message))
   }, [])
 
   const handleLogin = (e) => {
     e.preventDefault();
-   const [data] = login.filter((items) => items.email  === unique  || items.phone === unique  ) 
-    console.log(data)
-   if(data == undefined){
-      window.alert("Your email not registerd")
-   }
-   else if ((data.password === password && data.email === unique) || (data.password === password && data.phone === unique)  ) {
-      window.alert("You are succesfully login")
+    console.log((login))
+   const [data] =Object.keys(login).filter((key) => login[key].email  === unique  || login[key].phone === unique  ) 
+   console.log(data)
+    console.log(login[data])
+   if(login[data] == undefined){
+      window.alert(" email not registerd")
+   }  
+   else if ((login[data].password === password && login[data].email === unique) || (login[data].password === password && login[data].phone === unique)  ) {
+      window.alert(`${login[data].username} you are succesfully login`)
       localStorage.setItem("useremail", unique)
       sessionStorage.setItem("userpassword",password)
       Navigate("/action")
     }
 
-    else if (data.email = unique) {
+    else if (login[data].email = unique) {
       window.alert("Password is not correct")
     }
     else {

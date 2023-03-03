@@ -44,9 +44,8 @@ const Content = () => {
     useEffect(() => {
         if (Object.keys(errors).length == 0 && display) {
          
-            fetch("http://localhost:5000/couriers", {
+            fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json", {
                 method: "POST",
-                headers: { "content-type": "application/json" },
                 body: JSON.stringify(data)
             })
                 .then(res => {

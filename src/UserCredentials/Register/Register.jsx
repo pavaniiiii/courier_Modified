@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./register.css"
 
+
 function Register() {
 
   const[existing,setExisting]=useState({}) 
@@ -15,12 +16,18 @@ function Register() {
     password: "",
     cpassword: ""
   })
-  useEffect(()=>{
-     fetch("http://localhost:7000/registration")
-     .then(res=>res.json())
-     .then(data=>setExisting(data))
-     .catch(err=>console.log(err.message))
-  },[]) 
+
+  useEffect(() => {
+    fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json")
+      .then(res => res.json())
+      .then(res =>{
+        setExisting(res)
+
+      } )
+
+      .catch(err => console.log(err.message))
+  }, [])
+ 
 
 
   const changeHandler = (e) => {
@@ -31,17 +38,17 @@ function Register() {
     console.log(register)
     setErrors(validate(register))
     setDisplay(true)
-
   }
 
   useEffect(() => {
     if (Object.keys(errors).length == 0 && display) {
-       const [searchEmail] = existing.filter((users)=>users.email === register.email)
-       const [searchPhone] =existing.filter((users)=>users.phone=== register.phone)
-
+       const [searchEmail] = Object.keys(existing).filter((key)=>existing[key].email === register.email)
+       const [searchPhone] =Object.keys(existing).filter((key)=>existing[key].phone=== register.phone)
+        console.log(searchEmail)
+        console.log(searchPhone)
        if(searchEmail=== undefined){
          if(searchPhone === undefined){
-      fetch("http://localhost:7000/registration/", {
+      fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(register)
@@ -58,14 +65,15 @@ function Register() {
         .catch((err) => {
           console.log(err)
         })
-      }else{
-        window.alert(`Your phone number is already registerd with ${searchPhone.username}`)
+     }
+      else{
+        window.alert(`Your phone number is already registerd`)
       }
        } else{
-         window.alert(`Your email id is already register with ${searchEmail.username}`)
+         window.alert(`Your email id is already registerd`)
        } 
-    }
-  }, [errors])
+    }}
+    , [errors])
 
 
   const validate = (values) => {
@@ -131,4 +139,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Register;
