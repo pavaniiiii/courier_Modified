@@ -27,7 +27,7 @@ export default function Tracking() {
   }
   const changeHandler = (e) => {
     setTrackId(e.target.value)
-    // setDisplay(false)
+     setDisplay(false)
   }
  
   return (
