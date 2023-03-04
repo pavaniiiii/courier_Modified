@@ -62,7 +62,7 @@ function Submit() {
       .then((data) => {
         console.log(data) 
         window.alert("Thanks for receiving the courier from our service")    
-        window.location.reload()    
+        Navigate("/tracking")   
       })
       .catch(err => {
         console.log(err.message)
