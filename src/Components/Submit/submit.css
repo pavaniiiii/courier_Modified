@@ -30,7 +30,7 @@ span{
     margin-bottom: 10px;
     
 }
-.person-logo{
+.profile-pic{
     width: 170px;
     height: 150px;
     border-radius: 5%;
@@ -54,7 +54,7 @@ span{
     margin-left: 50px;
     width: 100px;
     height: 50px;
-    padding: 0 25px ;
+    padding: 10px 25px ;
     background-color: rgb(245, 202, 11);
     border: none;
       top: 20px;

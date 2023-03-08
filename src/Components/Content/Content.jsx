@@ -100,7 +100,7 @@ const Content = () => {
             <img src="https://ccartoday.com/wp-content/uploads/2021/01/680-scaled.jpeg" className='form-img' alt="Image Not found" />
 
             <form className='form-horizontal' onSubmit={submitHandler}>
-                <div className="left">
+                <div className="left-content">
                     <h2 className='form-heading'>Shipment Details:</h2>
                     <div className='form-group'>
                         <label className='control-label'>Shipmet_From:</label>
@@ -119,7 +119,7 @@ const Content = () => {
                     <div className='form-group'>
                         <label className='control-label'>Weight:</label>
                         <div className='col'>
-                            <input type={"number"} className="form-control" step={0.1} value={Weight} onChange={changeHandler} placeholder='Enter in Kg' name='Weight' />
+                            <input type={"number"} className="form-control" step={0.1} value={Weight} min={0.1}  max={100}  onChange={changeHandler} placeholder='Enter in Kg' name='Weight' />
                         </div>
                         <p className='validation'>{errors.Weight}</p>
                     </div>

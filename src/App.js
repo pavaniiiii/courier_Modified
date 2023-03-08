@@ -8,6 +8,8 @@ import firebaseDB from './firebase'
 import Login from './UserCredentials/Login/Login';
 import Register from './UserCredentials/Register/Register';
 import Logout from './UserCredentials/Logout/Logout';
+import Qrdetails from './Components/Qrdetails/Qrdetails';
+import ForgotPaswd from './UserCredentials/ForgotPaswd/ForgotPaswd';
 
 
 
@@ -15,19 +17,27 @@ function App() {
   return (
     <BrowserRouter>
       <div className='main'>
-           <Header />
+       
       </div>
       <Routes>
-        <Route  path='/' element={<Content   />} />  
-        <Route  path='/tracking' element={<Tracking  />} />  
-        <Route  path='/action' element={<Action   />} />  
-        <Route  path='/action/:id' element={<Submit  />} />  
-        <Route  path='/login' element={<Login />} /> 
-        <Route  path='/register' element={<Register />} />  
-        <Route  path='/logout' element={<Logout/>} />    
+        <Route  path='/'  element={<><Content />   <Header /></> } />  
+        <Route  path='/tracking' element={<><Tracking  />  <Header /></>} />  
+        <Route  path='/action' element={<><Action /> <Header /></>} />  
+        <Route  path='/action/:id' element={<><Submit  /> <Header /></> } />  
+        <Route  path='/login' element={<><Login /> <Header /></> } /> 
+        <Route  path='/register' element={<><Register />  <Header /></>} />  
+        <Route  path='/logout' element={<><Logout/>  <Header /></>} />      
+        <Route  path='/forgot'  element={<><ForgotPaswd />  <Header /></>} />
+        <Route  path='/qr/:id' exact  element={<Qrdetails />} />
       </Routes>
       </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
+
+// "homepage": "http://pavaniiiii.github.io/courier_mini",

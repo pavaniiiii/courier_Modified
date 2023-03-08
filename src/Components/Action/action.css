@@ -1,7 +1,7 @@
 .action{
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(45deg,rgb(124, 118, 118),rgb(243, 248, 242));
+    background-image: linear-gradient(45deg,rgb(116, 93, 93),rgb(243, 248, 242));
     align-items: center;
 }
 
@@ -14,9 +14,51 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   margin-top: 30px;
-
+  color: rgb(37, 37, 213);
+  font-size: 24px;
+  font-weight: 700;
 }
-
+.model{
+  box-shadow: 2px 1px 20px 22px rgba(0,0,0,0.66);
+-webkit-box-shadow: 2px 1px 20px 22px rgba(0,0,0,0.66);
+-moz-box-shadow: 2px 1px 20px 22px rgba(0,0,0,0.66);
+}
 .edit{
   cursor: pointer;
+}
+.model,.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+.overlay{
+  background-color:rgba(42, 45, 42, 0.8);
+}
+.model-content{
+   position: absolute;
+   top: 49%;
+   left: 44%;
+   transform: translate(-50%,-50%);
+   background-color: rgba(255, 254, 255, 0.8);
+   padding: 20px 150px 20px 10px;
+   border-radius: 10px;
+   border: 1.7px solid black;
+}
+.close-model{
+  position: absolute;
+  left: 292px;
+  border: none;
+  background-color: rgb(74, 83, 80);
+  border-radius: 5px;
+  font-size: 21px;
+  padding: 4px 10px;
+  bottom: 240px;
+}
+.qr-code-heading{
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

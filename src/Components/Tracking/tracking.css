@@ -26,7 +26,7 @@
   padding-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
-
+padding-right: 240px;
 }
 .tracking-input{
   font-size: 22px;
@@ -53,4 +53,12 @@
 .details{
  margin-right: 300px;
  margin-top: 10px;
+}
+.error{
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-right: 220px;
+  justify-content: center;
+  color: rgb(211, 48, 48);
 }

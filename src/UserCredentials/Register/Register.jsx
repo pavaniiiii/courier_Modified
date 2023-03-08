@@ -59,8 +59,7 @@ function Register() {
         .then(json => {
           console.log(json)
           window.alert(`${register.username} you are Successfully registered`)
-
-          Navigate("/login")
+        Navigate("/login")
         })
         .catch((err) => {
           console.log(err)
@@ -72,7 +71,8 @@ function Register() {
        } else{
          window.alert(`Your email id is already registerd`)
        } 
-    }}
+   
+   } }
     , [errors])
 
 

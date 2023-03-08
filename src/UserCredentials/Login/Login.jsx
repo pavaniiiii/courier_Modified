@@ -65,7 +65,7 @@ const Login = () => {
               onChange={(e) => setUnique(e.target.value)} />
             <input type="password" placeholder="Password" className="input-field" required value={password}
               onChange={(e) => setPassword(e.target.value)} />
-
+             <Link to="/forgot"><span className="forgot-span">Forgot Password?</span></Link> 
             <button className="submit-button" type="submit">Log in</button>
           </form>
         </div>

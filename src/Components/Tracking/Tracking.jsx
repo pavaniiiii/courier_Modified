@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import "./tracking.css"
-import axios from "axios"
 import { useEffect } from 'react'
+
 
 export default function Tracking() {
   const [data, setData] = useState(null)
   const [trackId, setTrackId] = useState("")
   const [display, setDisplay] = useState(false)
+
 
   useEffect(() => {
     fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json")
@@ -26,7 +27,9 @@ export default function Tracking() {
     console.log(Object.keys(data))
   }
   const changeHandler = (e) => {
+  
     setTrackId(e.target.value)
+
      setDisplay(false)
   }
  
@@ -43,8 +46,10 @@ export default function Tracking() {
       <div className='details'>
         <table className="table table-bordered table-track">
           <thead className="bg-dark text-white">
-            {display && data && <tr className='table-header'>
-              <td >Tracking_ID</td>
+            {display && data && (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId).length >=1)  &&
+              
+             <tr className='table-header'>      
+              <td >Tracking_ID </td>
               <td>User Name</td>
               <td>Email</td>
               <td>Phone No</td>
@@ -62,9 +67,10 @@ export default function Tracking() {
             {/* {display && data && data.filter((orders) => orders.Tracking_Id === trackId).map((id) => */}
              
           {display && data &&
-           Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).map((id) =>
-                   
+           (   (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).length >=1)?
+            Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).map((id) =>         
               <tr className='border' key={id} >
+                
                 <td>{data[id].Tracking_Id} </td>
                 <td>{data[id].Full_Name} </td>
                 <td>{data[id].Email} </td>
@@ -76,7 +82,7 @@ export default function Tracking() {
                 <td>{(data[id].Received_Date) ?(data[id].Received_Date):"-" }</td>
                 <td>{(data[id].Received_Time)?(data[id].Received_Time):"-" }</td>
                 <td>{(data[id].shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span>} </td>
-              </tr>)}
+              </tr>) : <h2 className='error'>*** Enter tracking Id is not valid ***</h2> )}
           </tbody>
         </table>
       </div>
