@@ -61,9 +61,14 @@ function Submit() {
       })
       .then((data) => {
         console.log(data) 
+<<<<<<< HEAD
         window.alert("Thanks for receiving the courier")   
         window.location.reload() 
        
+=======
+        window.alert("Thanks for receiving the courier from our service")    
+        Navigate("/tracking")   
+>>>>>>> 050acd6714b69d1f6f56aea90624be662c10c3a2
       })
       .catch(err => {
         console.log(err.message)
