@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import "./submit.css"
 
-
-
 function Submit() {
   const Navigate =useNavigate();
     
@@ -18,7 +16,7 @@ function Submit() {
   const { id } = useParams();
 
   const [data, setData] = useState([])
-  const [duplicate, setDuplicate] = useState({})
+  // const [duplicate, setDuplicate] = useState({})
 
   useEffect(() => {
     fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json/")
@@ -52,7 +50,9 @@ function Submit() {
       Received_Date:new Date().getDate()+"-"+(new Date().getMonth()+1)+"-"+new Date().getFullYear(),
       Received_Time:new Date().getHours()+":"+new Date().getMinutes()
     }
-   if(window.confirm(`The courier is delivered to ${data[id].Shipment_To}?`)){
+    if(data[id].shipment === false) {
+   if(window.confirm(`Are you sure the courier is delivered to ${data[id].Shipment_To}?`)){
+    
       fetch(`https://courier-orders-default-rtdb.firebaseio.com/couriers/${id}.json`,{
         method:"PUT",
         headers:{"content-type":"application/json"},
@@ -61,13 +61,16 @@ function Submit() {
       })
       .then((data) => {
         console.log(data) 
-        window.alert("Thanks for receiving the courier")   
+        window.alert("Thanks for visting our sameday courier")   
         window.location.reload() 
       })
       .catch(err => {
         console.log(err.message)
       })  
-    }
+    } 
+  }else{
+    window.alert(`The courier is already received to ${data[id].Shipment_To}`)
+  }
   }
     
   return (

@@ -15,9 +15,7 @@ export default function Tracking() {
       .then(res => res.json())
       .then(res =>{
         setData(res)
-
-      } )
-
+      } ) 
       .catch(err => console.log(err.message))
   }, [])
  
@@ -27,9 +25,7 @@ export default function Tracking() {
     console.log(Object.keys(data))
   }
   const changeHandler = (e) => {
-  
     setTrackId(e.target.value)
-
      setDisplay(false)
   }
  
@@ -41,14 +37,21 @@ export default function Tracking() {
 
         <input type="text" value={trackId} onChange={changeHandler}
           className='tracking-input-text' placeholder='Enter your Tracking Id..' />
-        <button onClick={submithandler} className='tracking-submit'>TRACK</button>
+        <button onClick={(e)=>submithandler(e)} className='tracking-submit'>TRACK</button>
       </div>
       <div className='details'>
-        <table className="table table-bordered table-track">
+
+
+                 
+      {display && data &&
+           (   (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).length >=1)?
+            Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).map((id) =>         
+             
+        <table className="table table-bordered table-track" key={id}>
           <thead className="bg-dark text-white">
-            {display && data && (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId).length >=1)  &&
+            {/* {display && data && (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId).length >=1)  && */}
               
-             <tr className='table-header'>      
+             <tr className='table-header'  >      
               <td >Tracking_ID </td>
               <td>User Name</td>
               <td>Email</td>
@@ -60,17 +63,12 @@ export default function Tracking() {
               <td>Received-Date</td>
               <td>Received-Time</td>
               <td>Status</td>
-            </tr>}
+            </tr>
+ 
           </thead>
           <tbody>
-
-            {/* {display && data && data.filter((orders) => orders.Tracking_Id === trackId).map((id) => */}
-             
-          {display && data &&
-           (   (Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).length >=1)?
-            Object.keys(data).filter((key) => data[key].Tracking_Id == trackId ).map((id) =>         
-              <tr className='border' key={id} >
-                
+    
+          <tr className='border' key={id} >
                 <td>{data[id].Tracking_Id} </td>
                 <td>{data[id].Full_Name} </td>
                 <td>{data[id].Email} </td>
@@ -82,9 +80,9 @@ export default function Tracking() {
                 <td>{(data[id].Received_Date) ?(data[id].Received_Date):"-" }</td>
                 <td>{(data[id].Received_Time)?(data[id].Received_Time):"-" }</td>
                 <td>{(data[id].shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span>} </td>
-              </tr>) : <h2 className='error'>*** Enter tracking Id is not valid ***</h2> )}
+              </tr>
           </tbody>
-        </table>
+        </table> ) :  <h2 className='error'>*** Enter tracking Id is not valid ***</h2> )}
       </div>
     </div>
   )
