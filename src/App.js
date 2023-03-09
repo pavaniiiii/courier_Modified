@@ -28,7 +28,7 @@ function App() {
         <Route  path='/register' element={<><Register />    <Header /> </>} />  
         <Route  path='/logout' element={<><Logout/>    <Header /> </>} />      
         <Route  path='/forgot'  element={<><ForgotPaswd />   <Header /> </>} />
-        {/* <Route  path='/qr/:id' exact  element={<Qrdetails />} /> */}
+        <Route  path='/qr/:id' exact  element={<Qrdetails />} />
       </Routes>
       </BrowserRouter>
   );
