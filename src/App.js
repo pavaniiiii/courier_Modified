@@ -17,17 +17,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className='main'>
-   
+   <Header />
       </div>
       <Routes>
-        <Route  path='/'  element={<><Content />    </> } />  
-        <Route  path='/tracking' element={<><Tracking  />   </>} />  
-        <Route  path='/action' element={<><Action />   </>} />  
-        <Route  path='/action/:id' element={<><Submit  />   </> } />  
-        <Route  path='/login' element={<><Login />  </> } /> 
-        <Route  path='/register' element={<><Register />   </>} />  
-        <Route  path='/logout' element={<><Logout/>  </>} />      
-        <Route  path='/forgot'  element={<><ForgotPaswd />  </>} />
+        <Route    path='/'  exact element={<><Content />    </> } />  
+        <Route  path='/tracking' exact   element={<><Tracking  />   </>} />  
+        <Route  path='/action' exact element={<><Action />   </>} />  
+        <Route  path='/action/:id' exact element={<><Submit  />   </> } />  
+        <Route  path='/login' exact element={<><Login />  </> } /> 
+        <Route  path='/register' exact element={<><Register />   </>} />  
+        <Route  path='/logout' exact element={<><Logout/>  </>} />      
+        <Route  path='/forgot' exact element={<><ForgotPaswd />  </>} />
         {/* <Route  path='/qr/:id' exact  element={<Qrdetails />} /> */}
       </Routes>
       </BrowserRouter>
