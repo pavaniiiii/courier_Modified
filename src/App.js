@@ -20,15 +20,15 @@ function App() {
    
       </div>
       <Routes>
-        <Route  path='/'  element={<><Content />    <Header />  </> } />  
-        <Route  path='/tracking' element={<><Tracking  />   <Header /> </>} />  
-        <Route  path='/action' element={<><Action />    <Header /></>} />  
-        <Route  path='/action/:id' element={<><Submit  />    <Header /></> } />  
-        <Route  path='/login' element={<><Login />   <Header /> </> } /> 
-        <Route  path='/register' element={<><Register />    <Header /> </>} />  
-        <Route  path='/logout' element={<><Logout/>    <Header /> </>} />      
-        <Route  path='/forgot'  element={<><ForgotPaswd />   <Header /> </>} />
-        <Route  path='/qr/:id' exact  element={<Qrdetails />} />
+        <Route  path='/'  element={<><Content />    </> } />  
+        <Route  path='/tracking' element={<><Tracking  />   </>} />  
+        <Route  path='/action' element={<><Action />   </>} />  
+        <Route  path='/action/:id' element={<><Submit  />   </> } />  
+        <Route  path='/login' element={<><Login />  </> } /> 
+        <Route  path='/register' element={<><Register />   </>} />  
+        <Route  path='/logout' element={<><Logout/>  </>} />      
+        <Route  path='/forgot'  element={<><ForgotPaswd />  </>} />
+        {/* <Route  path='/qr/:id' exact  element={<Qrdetails />} /> */}
       </Routes>
       </BrowserRouter>
   );
