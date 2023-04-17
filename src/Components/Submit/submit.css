@@ -3,8 +3,6 @@
     display: flex;
    justify-content: center;
    width: 80%;
-
-  
 }
 .left{
     margin-right: 100px;
@@ -40,24 +38,33 @@ span{
 .update{
     margin-top: -180px;
 }
-.move-to-action{
+.back-button-click{
     margin-right: 500px;
     width: 100px;
     height: 50px;
     padding: 0 25px ;
-    background-color: rgb(211, 92, 65);
+    background-color: rgb(65, 68, 64);
     border: none;
+    color: white;
       top: 20px;
     border-radius: 3px;
 }
-.status-change{
+.update-button-click{
     margin-left: 50px;
     width: 100px;
     height: 50px;
     padding: 10px 25px ;
-    background-color: rgb(245, 202, 11);
+    color: whitesmoke;
+    background-color: rgb(65, 68, 64);
     border: none;
-      top: 20px;
+    top: 20px;
     border-radius: 3px;
-
+}
+.update-button-click:hover{
+    background-color:#002ead;
+      transition: 0.7s;
+}
+.back-button-click:hover{
+    background-color:#d74f43;
+    transition: 1s;
 }

@@ -11,7 +11,7 @@ export default function Tracking() {
 
 
   useEffect(() => {
-    fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json")
+    fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers.json")
       .then(res => res.json())
       .then(res =>{
         setData(res)
@@ -32,7 +32,7 @@ export default function Tracking() {
   return (
     <div className='tracking'>
       <img src="https://gbquotes.com/wp-content/uploads/2017/05/courier-van.jpg" width={"100%"} height="500px" alt="" className='tracking-img' />
-      <h2 className='tracking-main'>Track Your Device Here..!</h2>
+      <h2 className='tracking-main-text'>Track Your Device Here..!</h2>
       <div className="tracking-input" >
 
         <input type="text" value={trackId} onChange={changeHandler}
@@ -61,7 +61,7 @@ export default function Tracking() {
               <td>Order-Date</td>
               <td>Order-Time</td>
               <td>Received-Date</td>
-              <td>Received-Time</td>
+              <td>Received-Time</td> 
               <td>Status</td>
             </tr>
  

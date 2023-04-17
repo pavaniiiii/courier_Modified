@@ -17,18 +17,18 @@ function App() {
   return (
     <BrowserRouter>
       <div className='main'>
-   <Header />
+
       </div>
       <Routes>
-        <Route    path='/'  exact element={<><Content />    </> } />  
-        <Route  path='/tracking' exact   element={<><Tracking  />   </>} />  
-        <Route  path='/action' exact element={<><Action />   </>} />  
-        <Route  path='/action/:id' exact element={<><Submit  />   </> } />  
-        <Route  path='/login' exact element={<><Login />  </> } /> 
-        <Route  path='/register' exact element={<><Register />   </>} />  
-        <Route  path='/logout' exact element={<><Logout/>  </>} />      
-        <Route  path='/forgot' exact element={<><ForgotPaswd />  </>} />
-        {/* <Route  path='/qr/:id' exact  element={<Qrdetails />} /> */}
+        <Route    path='/'  exact element={<> <Header /><Content />    </> } />  
+        <Route  path='/tracking' exact   element={<><Header /><Tracking  />   </>} />  
+        <Route  path='/action' exact element={<><Header /><Action />   </>} />  
+        <Route  path='/action/:id' exact element={<><Header /><Submit  />   </> } />  
+        <Route  path='/login' exact element={<><Header /><Login />  </> } /> 
+        <Route  path='/register' exact element={<><Header /><Register />   </>} />  
+        <Route  path='/logout' exact element={<><Header /><Logout/>  </>} />      
+        <Route  path='/forgot' exact element={<><Header /><ForgotPaswd />  </>} />
+        <Route  path='/qr/:id' exact  element={<Qrdetails />} />
       </Routes>
       </BrowserRouter>
   );
@@ -39,4 +39,4 @@ export default App;
 
 
 
-
+// "homepage": "http://pavaniiiii.github.io/courier_mini",

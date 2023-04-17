@@ -10,7 +10,9 @@ function Logout() {
        Navigate("/login")
     },[])
   return (
-    <div>Logout</div>
+    <div>
+         
+    </div>
   )
 }
 

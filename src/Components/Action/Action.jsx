@@ -10,7 +10,9 @@ function Action() {
   const [window, setWindow] = useState(false)
   const[id,setId]=useState("")
   useEffect(() => {
-    fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json")
+    fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers.json")
+  
+
       .then(res => {
         return res.json()
       })
@@ -31,7 +33,7 @@ function Action() {
   return (
     <div className='action'>
       <img src="https://wallup.net/wp-content/uploads/2019/09/729853-sea-waves-rocks-beach-sunrise.jpg" width={"100%"} height="500px" alt="" className='tracking-img' />
-      <h2 className='tracking-main'>Courier details& Receive actions  </h2>
+      <h2 className='tracking-main'>All Courier details & Actions  </h2>
       <table className="table table-bordered table-main" width={"500px"} >
 
         <thead className="bg-dark text-white table-header">
@@ -59,7 +61,7 @@ function Action() {
               <tr className='border' key={id} >
                 <td onClick={()=> handleClick(id)}  >
               
-                  {<Qrcode value={"https://courier-orders.web.app/qr/" + id} />}
+                  {<Qrcode value={"https://courier-orders-1bdb1.web.app/qr/" + id} />}
                 
                 </td>
                 <td>{data[id].Tracking_Id} </td>                
@@ -69,7 +71,7 @@ function Action() {
                 <td>{data[id].Shipment_From} </td>
                 <td>{data[id].Shipment_To} </td>
                 <td>{data[id].Date} </td>
-                <td>{data[id].Time} </td>
+                <td>{(data[id].Time)} </td>
                 <td>{(data[id].Received_Date) ? (data[id].Received_Date) : "-"}</td>
                 <td>{(data[id].Received_Time) ? (data[id].Received_Time) : "-"}</td>
                 <td>{(data[id].shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span>} </td>
@@ -86,7 +88,7 @@ function Action() {
                <QRCode
                   size={256}
                   style={{ height: "auto", width: "210px" }}
-                  value={"https://courier-orders.web.app/qr/"+ id}
+                  value={"https://courier-orders-1bdb1.web.app/qr/"+ id}
                   viewBox={`0 0 256 256`}
                 /> 
                 <button className='close-model' onClick={handleClick}>&#10006;</button>

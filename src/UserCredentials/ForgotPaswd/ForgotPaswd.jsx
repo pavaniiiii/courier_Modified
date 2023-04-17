@@ -14,7 +14,7 @@ function ForgotPaswd() {
     })
 
     useEffect(() => {
-        fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json")
+        fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/registration.json")
             .then(res => res.json())
             .then(res => {
                 setForgot(res)
@@ -73,7 +73,7 @@ function ForgotPaswd() {
             }
 
             else if (key.length >= 1) {
-                fetch(`https://courier-orders-default-rtdb.firebaseio.com/registration/${key}.json`, {
+                fetch(`https://courier-orders-1bdb1-default-rtdb.firebaseio.com/registration/${key}.json`, {
                     method: "PUT",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify(newValues)

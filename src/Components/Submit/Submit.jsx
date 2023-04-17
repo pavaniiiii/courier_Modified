@@ -19,7 +19,7 @@ function Submit() {
   // const [duplicate, setDuplicate] = useState({})
 
   useEffect(() => {
-    fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json/")
+    fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers.json/")
       .then(res => {
         return res.json()
       })
@@ -48,12 +48,12 @@ function Submit() {
       Tracking_Id: data[id].Tracking_Id,
       Weight: data[id].Weight,
       Received_Date:new Date().getDate()+"-"+(new Date().getMonth()+1)+"-"+new Date().getFullYear(),
-      Received_Time:new Date().getHours()+":"+new Date().getMinutes()
+      Received_Time:((new Date().getHours()) >=12 ?(new Date().getHours()-12) : (new Date().getHours())) + ":" + new Date().getMinutes() + (new Date().getHours() >=12 ? "PM":"AM" ) 
     }
     if(data[id].shipment === false) {
    if(window.confirm(`Are you sure the courier is delivered to ${data[id].Shipment_To}?`)){
     
-      fetch(`https://courier-orders-default-rtdb.firebaseio.com/couriers/${id}.json`,{
+      fetch(`https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers/${id}.json`,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(values)
@@ -122,8 +122,8 @@ function Submit() {
         </div>
       </div> }
       <div className='update'>
-      {<Link to={"/action"}> <button  className="move-to-action" >&lt;Back</button> </Link> }
-        {<button onClick={handleSubmit} className="status-change"  >Received</button>}
+      {<Link to={"/action"}> <button  className="back-button-click" >&lt;Back</button> </Link> }
+        {<button onClick={handleSubmit} className="update-button-click"  >Update</button>}
       </div>
       <br/>   <br/>
     </div> 

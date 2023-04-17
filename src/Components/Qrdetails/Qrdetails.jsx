@@ -7,7 +7,7 @@ function Qrdetails() {
   const { id } = useParams();
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch(`https://courier-orders-default-rtdb.firebaseio.com/couriers/${id}.json`)
+    fetch(`https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers/${id}.json`)
       .then(res => {
         return res.json()
       })

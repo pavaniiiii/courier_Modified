@@ -4,6 +4,7 @@
     align-items: center;
     background-image: linear-gradient(45deg,rgb(153, 131, 131),rgb(139, 139, 219));
     flex-direction: column;
+    overflow: hidden;
 }
 .form-img{
     width: 100%;
@@ -107,13 +108,16 @@ span{
    display: flex;
    align-items: center;
   position: absolute;
+
 }
+
 .resetbtn{
     position: relative;
-    top: 230px;
+    top: 130px;
     width: 160px;
     right: 430px;
 }
+
 
 .validation{
     color: red;

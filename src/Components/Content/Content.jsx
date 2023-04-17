@@ -20,10 +20,11 @@ const Content = () => {
         Phone_No: "",
         Date: new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear(),
         Tracking_Id: `ETH${Date.now()}`,
-        Time: new Date().getHours() + ":" + new Date().getMinutes(),
+        Time: ((new Date().getHours()) >=12 ?(new Date().getHours()-12) : (new Date().getHours())) + ":" + new Date().getMinutes() + (new Date().getHours() >=12 ? "PM":"AM" ) ,
         shipment: false,
         Received_Date:"",
         Received_Time:""
+
     })
 
 
@@ -44,7 +45,8 @@ const Content = () => {
     useEffect(() => {
         if (Object.keys(errors).length == 0 && display) {
          
-            fetch("https://courier-orders-default-rtdb.firebaseio.com/couriers.json", {
+            fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/couriers.json", {
+        
                 method: "POST",
                 body: JSON.stringify(data)
             })
@@ -197,7 +199,7 @@ const Content = () => {
                                 <span>{(data.shipment) ? <span className='btn btn-success'>Delivered</span> : <span className='btn btn-secondary' >Pending</span>} </span>
                             </div>
                         </div>
-
+                         
                         <div className='reset'>
                             <button className='btn btn-danger resetbtn' onClick={resetHandler} >Reset</button>
                         </div>

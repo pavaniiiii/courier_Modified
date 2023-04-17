@@ -11,7 +11,7 @@ const Login = () => {
   const Navigate = useNavigate()
 
   useEffect(() => {
-    fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json")
+    fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/registration.json")
       .then(res => res.json())
       .then(res => {
         setLogin(res)
@@ -22,7 +22,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log((login))
+    console.log(login)
    const [data] =Object.keys(login).filter((key) => login[key].email  === unique  || login[key].phone === unique  ) 
    console.log(data)
     console.log(login[data])
@@ -51,10 +51,10 @@ const Login = () => {
         <div className="left-side">
           <h2 className="login-left-heading">SAMEDAY COURIER</h2>
           <p className="login-left-content">Same day delivery courier service is a type of delivery service in which packages and documents are delivered on the same day they are shipped. This service is generally used for urgent or time-sensitive deliveries. In India, many companies offer same-day delivery services nationally and internationally. Our operations, infrastructure and technology enable our customers to transact with us and our partners at low costs.</p>
-
+ 
           <span className="login-left-span">Don't you have any account?</span>
           <Link to={"/register"}>
-            <button className="register-button">Register&gt;</button>
+            <button className="register-button">Register</button>
           </Link>
 
         </div>

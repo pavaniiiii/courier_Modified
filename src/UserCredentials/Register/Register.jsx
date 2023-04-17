@@ -18,7 +18,7 @@ function Register() {
   })
 
   useEffect(() => {
-    fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json")
+    fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/registration.json")
       .then(res => res.json())
       .then(res =>{
         setExisting(res)
@@ -48,7 +48,7 @@ function Register() {
         console.log(searchPhone)
        if(searchEmail=== undefined){
          if(searchPhone === undefined){
-      fetch("https://courier-orders-default-rtdb.firebaseio.com/registration.json", {
+      fetch("https://courier-orders-1bdb1-default-rtdb.firebaseio.com/registration.json", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(register)
@@ -66,10 +66,11 @@ function Register() {
         })
      }
       else{
-        window.alert(`Your phone number is already registerd`)
+        window.alert(`Your phone number is already register with ${existing[searchPhone].username}`)
+
       }
        } else{
-         window.alert(`Your email id is already registerd`)
+         window.alert(`Your email id is already register with ${existing[searchEmail].username} `)
        } 
    
    } }

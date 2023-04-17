@@ -14,7 +14,7 @@ export default function Header() {
           <ul className="list">
             <li className="list-items"><Link to={"/"}>Home</Link></li>
             <li className="list-items"> <Link to={"/tracking"}>Tracking</Link></li>
-            <li className="list-items"> <Link to={"/action"}>Action</Link></li>
+            <li className="list-items"> <Link to={"/action"}>Actions</Link></li>
             <li className="list-items"> <Link to={"/login"}>Login</Link></li>
           </ul>  
           </div>

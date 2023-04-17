@@ -8,7 +8,7 @@
     background-color: rgb(115, 179, 209);
     height: 60px;
     position: fixed;
- 
+   overflow: hidden;
 }
 
 .logo{

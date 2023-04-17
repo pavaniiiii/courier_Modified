@@ -4,6 +4,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   overflow: hidden;
 }
 .card-login {
    display: flex;
@@ -24,9 +25,10 @@
    color: rgb(40, 36, 36);
 }
 .login-left-heading{
-   margin-left: 30px;
+   margin-left: 110px;
    margin-top: 30px;
-   color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: rgb(65, 20, 189);
 }
 .right-heading {
    font-size: 28px;
@@ -35,14 +37,15 @@
 .login-left-content {
    font-size: 17px;
    overflow: hidden;
+   line-height: 30px;
 }
 .login-left-span {
    font-size: 20px;
-   line-height: 10px;
+   line-height: 20px;
 }
 
 .register-button {
-
+ 
    padding: 1px 30px;
    line-height: 40px;
    background-color: rgb(8, 32, 9);
@@ -50,7 +53,9 @@
    font-size: large;
    border-radius: 10px;
 }
-
+.register-button:active{
+   color: rgba(27, 152, 214, 0.76);
+}
 .right-side {
   flex:1;
    padding-left: 50px;
@@ -81,6 +86,9 @@
    font-size: large;
    border-radius: 10px;
 
+}
+.submit-button:hover{
+   color: rgba(27, 152, 214, 0.76);
 } 
 .forgot-span{
    color: rgba(90, 90, 211,0.4);
