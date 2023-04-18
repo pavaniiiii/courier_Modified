@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/courier_mini/static/css/main.803f3183.css",
-    "main.js": "/courier_mini/static/js/main.3aa54acc.js",
-    "static/js/787.82abc923.chunk.js": "/courier_mini/static/js/787.82abc923.chunk.js",
-    "index.html": "/courier_mini/index.html",
-    "main.803f3183.css.map": "/courier_mini/static/css/main.803f3183.css.map",
-    "main.3aa54acc.js.map": "/courier_mini/static/js/main.3aa54acc.js.map",
-    "787.82abc923.chunk.js.map": "/courier_mini/static/js/787.82abc923.chunk.js.map"
+    "main.css": "/courier_order/static/css/main.803f3183.css",
+    "main.js": "/courier_order/static/js/main.89851d07.js",
+    "static/js/787.82abc923.chunk.js": "/courier_order/static/js/787.82abc923.chunk.js",
+    "index.html": "/courier_order/index.html",
+    "main.803f3183.css.map": "/courier_order/static/css/main.803f3183.css.map",
+    "main.89851d07.js.map": "/courier_order/static/js/main.89851d07.js.map",
+    "787.82abc923.chunk.js.map": "/courier_order/static/js/787.82abc923.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.803f3183.css",
-    "static/js/main.3aa54acc.js"
+    "static/js/main.89851d07.js"
   ]
 }
